@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled, { createGlobalStyle } from "styled-components";
+import { Reset } from "styled-reset";
+import Headers from "./Components/Headers";
+import Routes from "./Components/Routes";
 
-function App() {
+const HeaderStyle = createGlobalStyle`
+  ul{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    left: 0;
+    right: 0;
+    background-color: skyblue;
+  }
+  li {
+    margin: 1.2rem 2rem;
+  }
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+      <Reset />
+      <HeaderStyle />
+      <Routes />
+    </React.Fragment>
+  )
 }
 
 export default App;
+
